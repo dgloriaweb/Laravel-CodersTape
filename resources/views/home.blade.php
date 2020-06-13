@@ -1,7 +1,7 @@
 @extends('layout');
 
 @section('content')
-<h1>About Us</h1>
+<h1>Welcome to Laravel tutorial of Coder's Tape</h1>
 
 @endsection
 
