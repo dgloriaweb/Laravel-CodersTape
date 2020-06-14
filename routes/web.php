@@ -10,7 +10,4 @@ Route::view('about','about');
 
 
 
-// Route::resource('customers','CustomersController');
-Route::get('customers','CustomersController@index');
-Route::get('customers/create','CustomersController@create');
-Route::post('customers','CustomersController@store');
+Route::resource('customers','CustomersController');
