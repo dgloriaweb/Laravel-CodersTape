@@ -9,7 +9,7 @@
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous"
         />
-        <title>Laravel - Coder's Tape Tutorial</title>
+        <title>@yield('title', 'Laravel - Coder\'s Tape Tutorial')</title>
     </head>
     <body>
         <ul class="nav">

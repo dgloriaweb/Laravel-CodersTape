@@ -9,9 +9,13 @@ class CustomersController extends Controller
 {
     public function list()
     {
+        $activeCustomers = Customer::where('isActive',1)->get();
+        $inactiveCustomers = Customer::where('isActive',0)->get();
         $customers = Customer::all();
         return view('internals.customers', [
             'customers' => $customers,
+            'activeCustomers' => $activeCustomers,
+            'inactiveCustomers' => $inactiveCustomers,
         ]);
     }
 
@@ -20,12 +24,13 @@ class CustomersController extends Controller
         //validation
         $data = request()->validate([
             'name' => 'required|min:3',
-            'email' => 'required'
+            'email' => 'required|email'
         ]);
 
         $customer = new Customer();
         $customer->name = request('name');
         $customer->email = request('email');
+        $customer->isActive = request('isActive');
         $customer->save();
         return back();
     }

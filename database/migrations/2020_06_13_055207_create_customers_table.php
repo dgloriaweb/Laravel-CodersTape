@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateCustomersTable extends Migration
 {
@@ -14,9 +15,13 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id'); //for id
             $table->string('name');
-            $table->timestamps();
+            $table->string('email');
+            $table->tinyInteger('isActive')->default('1');
+			$table->timestamp('deleted_at')->nullable();
+			$table->timestamp('created_at')->useCurrent();
+			$table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
         });
     }
 
