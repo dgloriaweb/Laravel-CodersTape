@@ -31,8 +31,10 @@
     <label for="is_active">Status</label>
     <select name="is_active" id="is_active" class="form-control">
         <option value="" disabled>Select customer status</option>
-        <option value="1" {{$customer->active ? 'selected' :''}}>Active</option>
-        <option value="0"{{$customer->inactive ? 'selected' :''}}>Inactive</option>
+        @foreach($customer->isActiveOptions() as $key => $value)
+
+        <option value="{{ $key }}" {{$customer->is_active == $value ? 'selected' :''}}>{{ $value }}</option>
+        @endforeach
     </select>
 </div>
 <div class="form-group">

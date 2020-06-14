@@ -31,9 +31,14 @@ class Customer extends Model
 
     public function getIsActiveAttribute($attribute)
     {
-        return  [
-            0 =>  'inactive',
+        return  $this->isActiveOptions()[$attribute];
+    }
+
+    public function isActiveOptions()
+    {
+        return [
+            0 =>'inactive' ,
             1 => 'active'
-        ][$attribute];
+        ];
     }
 }
