@@ -45,6 +45,14 @@
                     <option value="0">Inactive</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="company_id">Company</label>
+                <select name="company_id" id="company_id" class="form-control">
+                    @foreach ($companies as $company)
+                    <option value="{{ $company->id }}">{{ $company->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <button class="btn btn-primary" type="submit">Add customer</button>
             @csrf
@@ -58,7 +66,7 @@
         <ul>
             @foreach($activeCustomers as $activeCustomer)
             <li>
-                {{ $activeCustomer->name }}
+                {{ $activeCustomer->company->name }}
             </li>
             @endforeach
         </ul>
@@ -68,7 +76,7 @@
         <ul>
             @foreach($inactiveCustomers as $inactiveCustomer)
             <li>
-                {{ $inactiveCustomer->name }}
+                {{ $inactiveCustomer->company->name }}
             </li>
             @endforeach
         </ul>
