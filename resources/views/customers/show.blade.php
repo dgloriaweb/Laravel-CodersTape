@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-12">
        {{$customer->name}}
-
+        <a href="\customers\{{$customer->id}}\edit">Edit customer</a>
     </div>
 </div>
 @endsection

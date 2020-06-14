@@ -7,7 +7,7 @@
         type="text"
         name="name"
         placeholder="name"
-        value="{{ old('name') }}"
+        value="{{ old('name') ?? $customer->name }}"
     />
     <div>
         {{ $errors->first('name') }}
@@ -20,7 +20,7 @@
         type="email"
         name="email"
         placeholder="email"
-        value="{{ old('email') }}"
+        value="{{ old('email') ?? $customer->email }}"
     />
     <div>
         {{ $errors->first('email') }}
@@ -44,5 +44,4 @@
     </select>
 </div>
 
-<button class="btn btn-primary" type="submit">Add customer</button>
 @csrf

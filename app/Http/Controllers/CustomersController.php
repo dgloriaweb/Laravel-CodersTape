@@ -23,8 +23,9 @@ class CustomersController extends Controller
         return view('customers.create', compact('companies'));
     }
 
-    function store()
+    public function store(Customer $customer)
     {
+
         //validation
         $data = request()->validate([
             'name' => 'required|min:3',
@@ -40,7 +41,15 @@ class CustomersController extends Controller
     public function show(Customer $customer)
     {
         // $customer = Customer::where('id', $id)->firstOrFail(); same happens without this
-        
+
         return view('customers.show', compact('customer'));
     }
+
+    public function edit(Customer $customer)
+    {
+        $companies = Company::all();
+        return view('customers.edit', compact('customer','companies'));
+    }
+
+
 }
