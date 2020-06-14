@@ -22,4 +22,12 @@ class Customer extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function getIsActiveAttribute($attribute)
+    {
+        return  [
+            0 => 'inactive',
+            1 => 'active'
+        ][$attribute];
+    }
 }

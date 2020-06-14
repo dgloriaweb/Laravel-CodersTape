@@ -14,16 +14,16 @@
     <body>
         <ul class="nav">
             <li class="nav-item">
-                <a href="home" class="nav-link">Home</a>
+                <a href="/home" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="about" class="nav-link">About Us</a>
+                <a href="/about" class="nav-link">About Us</a>
             </li>
             <li class="nav-item">
-                <a href="contact" class="nav-link">Contact</a>
+                <a href="/contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="customers" class="nav-link">Customers</a>
+                <a href="/customers" class="nav-link">Customers</a>
             </li>
         </ul>
 
