@@ -38,8 +38,8 @@
             </div>
 
             <div class="form-group">
-                <label for="isActive">Status</label>
-                <select name="isActive" id="isActive" class="form-control">
+                <label for="is_active">Status</label>
+                <select name="is_active" id="is_active" class="form-control">
                     <option value="" disabled>Select customer status</option>
                     <option value="1" selected>Active</option>
                     <option value="0">Inactive</option>

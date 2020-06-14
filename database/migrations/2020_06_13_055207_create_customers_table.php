@@ -18,7 +18,7 @@ class CreateCustomersTable extends Migration
             $table->increments('id'); //for id
             $table->string('name');
             $table->string('email');
-            $table->tinyInteger('isActive')->default('1');
+            $table->tinyInteger('is_active')->default('1');
 			$table->timestamp('deleted_at')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
