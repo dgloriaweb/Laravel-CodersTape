@@ -9,8 +9,8 @@ class CustomersController extends Controller
 {
     public function list()
     {
-        $activeCustomers = Customer::where('is_active',1)->get();
-        $inactiveCustomers = Customer::where('is_active',0)->get();
+        $activeCustomers = Customer::Active()->get();
+        $inactiveCustomers = Customer::Inactive()->get();
         $customers = Customer::all();
         return view('internals.customers', [
             'customers' => $customers,
