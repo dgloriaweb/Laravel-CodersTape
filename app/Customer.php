@@ -9,12 +9,12 @@ class Customer extends Model
     //scopes
     public function scopeActive($query)
     {
-        return $query->where('is_active',1);
+        return $query->where('is_active', 1);
     }
     public function scopeInactive($query)
     {
-        return $query->where('is_active',0);
+        return $query->where('is_active', 0);
     }
 
-
+    protected $guarded = [];
 }
