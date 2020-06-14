@@ -37,10 +37,10 @@ class CustomersController extends Controller
         return redirect('customers');
     }
 
-    public function show($id)
+    public function show(Customer $customer)
     {
-        $customer = Customer::find($id);
-
+        // $customer = Customer::where('id', $id)->firstOrFail(); same happens without this
+        
         return view('customers.show', compact('customer'));
     }
 }
