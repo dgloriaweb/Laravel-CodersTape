@@ -49,6 +49,19 @@ class CustomersController extends Controller
         return redirect('customers');
     }
 
+    public function destroy(Customer $customer)
+    {
+        // UPDATE `customers` SET `deleted_at` = '2020-06-15 07:03:00' WHERE `customers`.`id` = 1;
+        //mysql timestamp date format
+        // $customer->update(['deleted_at'=>date("Y-m-d H:i:s")]);
+        //simple way
+        $customer->update(['deleted_at' => now()]);
+
+        //ne hasznald! hasznalj update-et!
+        // $customer->delete();
+        return redirect('customers');
+    }
+
     private function validateRequest()
     {
 

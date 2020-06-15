@@ -6,9 +6,24 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
-       {{$customer->name}}
-        <a href="\customers\{{$customer->id}}\edit">Edit customer</a>
+    <div class="col-4">
+        Name:
+        {{$customer->name}}
+        <br />
+        Company: {{$customer->company->name}}
+        <br />
+        Email: {{$customer->email}}
+        <br />
+        Deleted: {{$customer->deleted_at}}
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-4" style="display: inline;">
+        <a href="\customers\{{$customer->id}}\edit" class="btn btn-warning"
+            >Edit customer</a
+        >
+        @include('customers.inc.delete')
     </div>
 </div>
 @endsection

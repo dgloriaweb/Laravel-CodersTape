@@ -33,6 +33,7 @@ class Customer extends Model
     {
         return  $this->isActiveOptions()[$attribute];
     }
+    
 
     public function isActiveOptions()
     {

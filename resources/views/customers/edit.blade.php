@@ -9,9 +9,9 @@
 <div class="row">
     <div class="col-12">
         <form action="/customers/{{$customer->id}}" method="POST">
-            @method('PATCH')
-            @include ('customers.form')
+            @method('PATCH') @include ('customers.form')
             <button class="btn btn-primary" type="submit">Save customer</button>
+            @include('customers.inc.delete')
         </form>
     </div>
 </div>
