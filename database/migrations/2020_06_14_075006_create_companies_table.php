@@ -18,7 +18,7 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id'); //for id
             $table->string('name');
-            $table->string('phone');
+            $table->string('phone')->nullable();
 			$table->timestamp('deleted_at')->nullable();
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
