@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
@@ -11,7 +12,8 @@ class Company extends Model
 
     public function customers()
     {
-       return $this->hasMany('Customer::class');
+       return $this->hasMany(Customer::class);
     }
-    
+
+
 }
